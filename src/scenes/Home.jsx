@@ -39,7 +39,7 @@ const Home = ({setSelctedPage}) => {
           }}
         className="relative flex flex-col items-start ml-10 mr-10 gap-6">
           <div className="flex">
-            <h1 className="font-playfair text-[70px]">
+            <h1 className="font-playfair text-[40px] lg:text-[70px]">
             Hello, I’m <br/> <span className="text-blue">Flutter</span> Developer
           </h1>
           {/* <img src={flutter} alt="flutter" className="z-[-1] md:z-0 absolute -right-[50%]"/> */}
