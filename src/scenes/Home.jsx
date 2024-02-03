@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 // import flutter from '../assets/FlutterDeveloperText.png'
-import HomePageGraphic from "../assets/Programmer-rafiki 1.svg";
+import HomePageGraphic from "../assets/undraw_product_iteration_kjok 2.svg";
 import useMediaQuery from "../hooks/useMediaQuery";
 import AnchorLink from 'react-anchor-link-smooth-scroll'
 const Home = ({setSelctedPage}) => {
@@ -26,7 +26,7 @@ const Home = ({setSelctedPage}) => {
           hidden: { opacity: 0, x: -50 },
           visible: { opacity: 0.3, x: 0 },
           }}
-          className="font-tourney text-[100px] z-0 absolute left-[20rem] opacity-[0.1] leading-relaxed tracking-wider max-w-[1100px]"><span className="text-blue">SOFTWARE</span> ENGINEER</motion.h4>
+          className="font-tourney text-[100px] z-0 absolute left-[20rem] opacity-[0.1] leading-relaxed tracking-wider max-w-[1100px] "><span className="text-blue">SOFTWARE</span> ENGINEER</motion.h4>
         ))
       }
       {/* MAIN HEADER */}
@@ -41,7 +41,7 @@ const Home = ({setSelctedPage}) => {
           }}
         className="relative flex flex-col items-start p-5 md:ml-10 md:mr-10 gap-6">
           <div className="flex">
-            <h1 className="font-playfair text-[40px] lg:text-[70px]">
+            <h1 className="font-playfair text-[40px] lg:text-[70px] ">
             Hello, I’m <br/> <span className="text-blue">Flutter</span> Developer
           </h1>
           {/* <img src={flutter} alt="flutter" className="z-[-1] md:z-0 absolute -right-[50%]"/> */}
@@ -53,7 +53,7 @@ const Home = ({setSelctedPage}) => {
           className="mt-8">
             <button 
             onClick={() => setSelctedPage("contactus")}
-            className="px-6 py-2 font-semibold text text-blue border-2 border-blue hover:bg-blue hover:text-white hover:border-white transition duration-500">
+            className="px-6 py-2 font-semibold text text-blue border-2 border-blue hover:shadow-md hover:shadow-blue transition duration-500">
               Lit’s Discuss
             </button>
           </AnchorLink>

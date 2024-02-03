@@ -1,26 +1,17 @@
-import LinkedIn from '../assets/linkedin.png';
-import Twitter from '../assets/twitter.png';
-import Facebook from '../assets/facebook.png';
-import Instagram from '../assets/instagram.png';
+import Github from '../assets/Github.svg';
+import Facebook from '../assets/mdi_facebook.svg';
+import Telegram from '../assets/Telegram.svg';
 
 const SocialMediaIcons = () => {
     return (
     <div className="flex gap-4">
         <a
         className="hover:opacity-50 transition duration-500"
-        href="https://www.linkedin.com"
+        href="https://www.github.com"
         target="_blank"
         rel="noreferrer"
         >
-        <img alt="linkedin-link" src={LinkedIn} />
-        </a>
-        <a
-        className="hover:opacity-50 transition duration-500"
-        href="https://www.twitter.com"
-        target="_blank"
-        rel="noreferrer"
-        >
-        <img alt="twitter-link" src={Twitter} />
+        <img alt="Github-link" src={Github} />
         </a>
         <a
         className="hover:opacity-50 transition duration-500"
@@ -32,11 +23,11 @@ const SocialMediaIcons = () => {
         </a>
         <a
         className="hover:opacity-50 transition duration-500"
-        href="https://www.instagram.com"
+        href="https://www.telegram.com"
         target="_blank"
         rel="noreferrer"
         >
-        <img alt="instagram-link" src={Instagram} />
+        <img alt="telegram-link" src={Telegram} />
         </a>
     </div>
     );

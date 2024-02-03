@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import Navbar from "./scenes/Navbar";
 import useMediaQuery from "./hooks/useMediaQuery";
 import Home from "./scenes/Home";
-import Skiles from "./scenes/Skiles";
+import Skills from "./scenes/Skills";
 function App() {
   const [selectedPage, setSelectedPage] = useState("home");
   const [isTopOfPage, setIsTopOfPage] = useState(true);
@@ -28,7 +28,7 @@ function App() {
         setSelectedPage={setSelectedPage}
       />
       <Home setSelctedPage={setSelectedPage}/>
-      <Skiles setSelctedPage={setSelectedPage}/>
+      <Skills setSelctedPage={setSelectedPage}/>
     </div>
   );
 }

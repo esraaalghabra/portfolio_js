@@ -5,20 +5,21 @@ import {Bars3Icon, XMarkIcon} from "@heroicons/react/24/solid";
 import SocialMediaIcons from "../components/SocialMediaIcons";
 
 
-const Link = ({ page, selectedPage, setSelectedPage }) => {
+const Link = ({ page, selectedPage, setSelectedPage, isTopOfPage }) => {
+    const navBorder = isTopOfPage ? " border-b-2 border-blue" : "border-b-2 border-white";
     const lowerCasePage = page.toLowerCase();
     return (
-      <AnchorLink
-        className={`${
-          selectedPage === lowerCasePage ? "border-b-2 border-blue" : ""
-        } hover:opacity-50 transition duration-500 font-light font-poppins`}
-        href={`#${lowerCasePage}`}
-        onClick={() => setSelectedPage(lowerCasePage)}
-      >
-        {page}
-      </AnchorLink>
-    );
-  };
+        <AnchorLink
+            className={`${
+            selectedPage === lowerCasePage ? navBorder : ""
+            } hover:opacity-50 transition duration-500 font-light font-poppins`}
+            href={`#${lowerCasePage}`}
+            onClick={() => setSelectedPage(lowerCasePage)}
+        >
+            {page}
+        </AnchorLink>
+        );
+    };
 
 const Navbar = ({isTopOfPage, selectedPage, setSelectedPage}) => {
     const [isMenueToggled, setIsMenueToggled] = useState(false);
@@ -27,9 +28,9 @@ const Navbar = ({isTopOfPage, selectedPage, setSelectedPage}) => {
     const flexBetween = "flex items-center justify-between";
 return (
     <nav>
-        <div className={`${navBackground} ${flexBetween} fixed top-0 z-30 w-full py-8 `}>
+        <div className={`${navBackground} ${flexBetween} fixed top-0 z-30 w-full py-8`}>
             <div className={`${flexBetween} m-auto w-5/6`}>
-                    <h4 className="font-playfair text-2xl font-bold">Osama Abd <span className="text-blue">Al Malik</span> </h4>
+                    <h4 className="font-playfair text-2xl font-bold">Osama Abd <span className={`${isTopOfPage ? "text-blue" : ""} `}>Al Malik</span> </h4>
                     {/* DESKTOP NAV */}
                     {isAboveMediumScreen ? (
                         <div className={`${flexBetween} gap-10`}>
@@ -38,26 +39,31 @@ return (
                                 page="Home"
                                 selectedPage={selectedPage}
                                 setSelectedPage={setSelectedPage}
+                                isTopOfPage={isTopOfPage}
                                 />
                                 <Link
                                 page="Skills"
                                 selectedPage={selectedPage}
                                 setSelectedPage={setSelectedPage}
+                                isTopOfPage={isTopOfPage}
                                 />
                                 <Link
                                 page="Projects"
                                 selectedPage={selectedPage}
                                 setSelectedPage={setSelectedPage}
+                                isTopOfPage={isTopOfPage}
                                 />
                                 <Link
                                 page="Testimonials"
                                 selectedPage={selectedPage}
                                 setSelectedPage={setSelectedPage}
+                                isTopOfPage={isTopOfPage}
                                 />
                                 <Link
                                 page="Contact"
                                 selectedPage={selectedPage}
                                 setSelectedPage={setSelectedPage}
+                                isTopOfPage={isTopOfPage}
                                 />
                             </div>
                             <SocialMediaIcons/>
