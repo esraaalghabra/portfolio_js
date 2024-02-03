@@ -23,10 +23,10 @@ const Home = ({setSelctedPage}) => {
           viewport={{ once: true, amount: 0.5 }}
           transition={{delay: 0.2, duration: 0.3 }}
           variants={{
-          hidden: { opacity: 0, x: -50 },
+          hidden: { opacity: 0, x: 50 },
           visible: { opacity: 0.03, x: 0 },
           }}
-          className="font-tourney text-[100px] z-0 absolute  -right-[20rem] opacity-[0.1] leading-relaxed tracking-wider max-w-[1100px] "><span className="text-blue">SOFTWARE</span> ENGINEER</motion.h4>
+          className="font-tourney text-[100px] z-0 absolute  -right-[24rem] opacity-[0.1] leading-relaxed tracking-wider max-w-[1100px] "><span className="text-blue">SOFTWARE</span> ENGINEER</motion.h4>
         ))
       }
       {/* MAIN HEADER */}
@@ -65,7 +65,7 @@ const Home = ({setSelctedPage}) => {
         viewport={{ once: true, amount: 0.5 }}
         transition={{delay: 0.5, duration: 0.3 }}
         variants={{
-        hidden: { opacity: 0, x: -50 },
+        hidden: { opacity: 0, x: 50 },
         visible: { opacity: 1, x: 0 },
         }}
         src={HomePageGraphic} alt="hero image" className="relative opacity-[0.5]"/>
