@@ -56,7 +56,7 @@ const Home = ({setSelctedPage}) => {
           </AnchorLink>
         </motion.div>
         {/* IMAGE */}
-        <motion.img
+        {/* <motion.img
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.5 }}
@@ -65,7 +65,7 @@ const Home = ({setSelctedPage}) => {
         hidden: { opacity: 0, x: -50 },
         visible: { opacity: 0.5, x: 0 },
         }}
-        src={HomePageGraphic} alt="hero image" className="relative opacity-[0.5]"/>
+        src={HomePageGraphic} alt="hero image" className="relative opacity-[0.5]"/> */}
       </div>
 
 
