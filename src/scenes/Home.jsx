@@ -37,7 +37,7 @@ const Home = ({setSelctedPage}) => {
           hidden: { opacity: 0, x: -50 },
           visible: { opacity: 1, x: 0 },
           }}
-        className="relative flex flex-col items-start ml-10 mr-10 gap-6">
+        className="relative flex flex-col items-start p-5 md:ml-10 md:mr-10 gap-6">
           <div className="flex">
             <h1 className="font-playfair text-[40px] lg:text-[70px]">
             Hello, I’m <br/> <span className="text-blue">Flutter</span> Developer
