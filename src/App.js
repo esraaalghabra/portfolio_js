@@ -27,8 +27,8 @@ function App() {
         selectedPage={selectedPage}
         setSelectedPage={setSelectedPage}
       />
-      <Home/>
-      <Skiles/>
+      <Home setSelctedPage={setSelectedPage}/>
+      <Skiles setSelctedPage={setSelectedPage}/>
     </div>
   );
 }

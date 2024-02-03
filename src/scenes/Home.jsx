@@ -1,18 +1,20 @@
 import { motion } from "framer-motion";
-import flutter from '../assets/FlutterDeveloperText.png'
-import HomePageGraphic from "../assets/profile-image.png";
+// import flutter from '../assets/FlutterDeveloperText.png'
+import HomePageGraphic from "../assets/Programmer-rafiki 1.svg";
 import useMediaQuery from "../hooks/useMediaQuery";
 import AnchorLink from 'react-anchor-link-smooth-scroll'
 const Home = ({setSelctedPage}) => {
-  const isAboveMediumScreen = useMediaQuery("(min-width: 1060px)");
+  // const isAboveMediumScreen = useMediaQuery("(min-width: 1060px)");
   const isDesktop = useMediaQuery("(min-width: 1200px)");
   return (
     <section
     id='home'
-    className=' gap-16 py-10 md:h-full md:pb-0'
+    className='gap-16 py-10 md:h-full md:pb-0'
     >
       {/* IMAGE AND MAIN HEADER */}
-      <div className="relative md:flex items-center justify-between mx-auto mt-32 w-5/6">
+      <motion.div
+      onViewportEnter={() => setSelctedPage("home")}
+      className="relative md:flex items-center justify-between mx-auto mt-32 w-5/6">
       {
         (isDesktop && (
           <motion.h4
@@ -24,7 +26,7 @@ const Home = ({setSelctedPage}) => {
           hidden: { opacity: 0, x: -50 },
           visible: { opacity: 0.3, x: 0 },
           }}
-          className="font-tourney text-[100px] z-0 absolute left-[16rem] opacity-[0.1] leading-relaxed tracking-wider max-w-[1100px]"><span className="text-blue">SOFTWARE</span> ENGINEER</motion.h4>
+          className="font-tourney text-[100px] z-0 absolute left-[20rem] opacity-[0.1] leading-relaxed tracking-wider max-w-[1100px]"><span className="text-blue">SOFTWARE</span> ENGINEER</motion.h4>
         ))
       }
       {/* MAIN HEADER */}
@@ -44,29 +46,30 @@ const Home = ({setSelctedPage}) => {
           </h1>
           {/* <img src={flutter} alt="flutter" className="z-[-1] md:z-0 absolute -right-[50%]"/> */}
           </div>
-          <p className="text-base	 max-w-[600px]">
+          <p className="text-base font-poppins max-w-[600px]">
             Passionate Flutter developer with expertise in crafting seamless mobile experiences. Proficient in Flutter and UI/UX design. Ready for any project
           </p>
           <AnchorLink
-          
           className="mt-8">
-            <button className="px-6 py-2 font-semibold text text-blue border-2 border-blue hover:bg-blue hover:text-white hover:border-white transition duration-500">
+            <button 
+            onClick={() => setSelctedPage("contactus")}
+            className="px-6 py-2 font-semibold text text-blue border-2 border-blue hover:bg-blue hover:text-white hover:border-white transition duration-500">
               Lit’s Discuss
             </button>
           </AnchorLink>
         </motion.div>
         {/* IMAGE */}
-        {/* <motion.img
+        <motion.img
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.5 }}
         transition={{delay: 0.5, duration: 0.3 }}
         variants={{
         hidden: { opacity: 0, x: -50 },
-        visible: { opacity: 0.5, x: 0 },
+        visible: { opacity: 1, x: 0 },
         }}
-        src={HomePageGraphic} alt="hero image" className="relative opacity-[0.5]"/> */}
-      </div>
+        src={HomePageGraphic} alt="hero image" className="relative opacity-[0.5]"/>
+      </motion.div>
 
 
 

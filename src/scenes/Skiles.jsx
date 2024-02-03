@@ -1,8 +1,10 @@
 import React from 'react'
 
-const Skiles = () => {
+const Skiles = ({setSelectedPage}) => {
   return (
-    <div>Skiles</div>
+    <section
+    id='skiles'
+    ></section>
   )
 }
 
