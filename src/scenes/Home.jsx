@@ -26,7 +26,7 @@ const Home = ({setSelctedPage}) => {
           hidden: { opacity: 0, x: -50 },
           visible: { opacity: 0.03, x: 0 },
           }}
-          className="font-tourney text-[100px] z-0 absolute left-[20rem] opacity-[0.1] leading-relaxed tracking-wider max-w-[1100px] "><span className="text-blue">SOFTWARE</span> ENGINEER</motion.h4>
+          className="font-tourney text-[100px] z-0 absolute  -right-[20rem] opacity-[0.1] leading-relaxed tracking-wider max-w-[1100px] "><span className="text-blue">SOFTWARE</span> ENGINEER</motion.h4>
         ))
       }
       {/* MAIN HEADER */}
