@@ -3,32 +3,30 @@ import Navbar from "./scenes/Navbar";
 import useMediaQuery from "./hooks/useMediaQuery";
 import Home from "./scenes/Home";
 import Skills from "./scenes/Skills";
+import Projects from "./scenes/Projects";
 function App() {
   const [selectedPage, setSelectedPage] = useState("home");
-  const [isTopOfPage, setIsTopOfPage] = useState(true);
   const isAboveMediumScreen = useMediaQuery("(min-width: 1060px)");
 
-  useEffect(() => { 
+  useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY === 0) {
-        setIsTopOfPage(true);
+      if(window.scrollY === 0) {
         setSelectedPage("home");
       }
-      if (window.scrollY !== 0) setIsTopOfPage(false);
-    };
+    }
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+    return () => window.removeEventListener("scroll", handleScroll)
+  },[])
 
   return (
     <div className="bg-deep-blue">
       <Navbar
-        isTopOfPage={isTopOfPage}
         selectedPage={selectedPage}
         setSelectedPage={setSelectedPage}
       />
       <Home setSelctedPage={setSelectedPage}/>
       <Skills setSelctedPage={setSelectedPage}/>
+      <Projects/>
     </div>
   );
 }

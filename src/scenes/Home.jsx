@@ -4,17 +4,18 @@ import HomePageGraphic from "../assets/undraw_product_iteration_kjok 2.svg";
 import useMediaQuery from "../hooks/useMediaQuery";
 import AnchorLink from 'react-anchor-link-smooth-scroll'
 const Home = ({setSelctedPage}) => {
-  // const isAboveMediumScreen = useMediaQuery("(min-width: 1060px)");
-  const isDesktop = useMediaQuery("(min-width: 1200px)");
+  const isDesktop = useMediaQuery("(min-width: 1400px)");
+
+
   return (
     <section
     id='home'
-    className='gap-16 py-10 md:h-full md:pb-0'
+    className='gap-16 py-10 md:h-full md:py-32'
     >
       {/* IMAGE AND MAIN HEADER */}
       <motion.div
       onViewportEnter={() => setSelctedPage("home")}
-      className="relative md:flex items-center justify-between mx-auto mt-32 w-5/6">
+      className="relative gap-10 mx-auto md:mt-28 w-5/6 md:flex md:items-center md:justify-between">
       {
         (isDesktop && (
           <motion.h4
@@ -26,7 +27,7 @@ const Home = ({setSelctedPage}) => {
           hidden: { opacity: 0, x: 50 },
           visible: { opacity: 0.03, x: 0 },
           }}
-          className="font-tourney text-[100px] z-0 absolute  -right-[24rem] opacity-[0.1] leading-relaxed tracking-wider max-w-[1100px] "><span className="text-blue">SOFTWARE</span> ENGINEER</motion.h4>
+          className="font-tourney text-[80px] xl:text-[100px] z-0 absolute xl:left-[44rem] lg:left-[32rem] opacity-[0.1] leading-relaxed tracking-wider max-w-[1100px] "><span className="text-blue">SOFTWARE</span><br/>ENGINEER</motion.h4>
         ))
       }
       {/* MAIN HEADER */}
@@ -39,9 +40,9 @@ const Home = ({setSelctedPage}) => {
           hidden: { opacity: 0, x: -50 },
           visible: { opacity: 1, x: 0 },
           }}
-        className="relative flex flex-col items-start p-5 md:ml-10 md:mr-10 gap-6">
+        className="relative flex flex-col items-start p-5 md:mr-10 gap-6">
           <div className="flex">
-            <h1 className="font-playfair text-[40px] lg:text-[70px] ">
+            <h1 className="font-playfair text-[40px] lg:text-[50px]">
             Hello, I’m <br/> <span className="text-blue">Flutter</span> Developer
           </h1>
           {/* <img src={flutter} alt="flutter" className="z-[-1] md:z-0 absolute -right-[50%]"/> */}
@@ -68,7 +69,9 @@ const Home = ({setSelctedPage}) => {
         hidden: { opacity: 0, x: 50 },
         visible: { opacity: 1, x: 0 },
         }}
-        src={HomePageGraphic} alt="hero image" className="relative opacity-[0.5]"/>
+        src={HomePageGraphic} 
+        alt="hero image" 
+        className="relative w-[500px] h-[500px]"/>
       </motion.div>
 
 

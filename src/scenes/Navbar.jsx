@@ -5,8 +5,8 @@ import {Bars3Icon, XMarkIcon} from "@heroicons/react/24/solid";
 import SocialMediaIcons from "../components/SocialMediaIcons";
 
 
-const Link = ({ page, selectedPage, setSelectedPage, isTopOfPage }) => {
-    const navBorder = isTopOfPage ? " border-b-2 border-blue" : "border-b-2 border-white";
+const Link = ({ page, selectedPage, setSelectedPage }) => {
+    const navBorder = " border-b-2 border-blue" ;
     const lowerCasePage = page.toLowerCase();
     return (
         <AnchorLink
@@ -21,16 +21,15 @@ const Link = ({ page, selectedPage, setSelectedPage, isTopOfPage }) => {
         );
     };
 
-const Navbar = ({isTopOfPage, selectedPage, setSelectedPage}) => {
+const Navbar = ({ selectedPage, setSelectedPage}) => {
     const [isMenueToggled, setIsMenueToggled] = useState(false);
     const isAboveMediumScreen = useMediaQuery("(min-width: 1060px)");
-    const navBackground = isTopOfPage ? "" : "bg-blue";
     const flexBetween = "flex items-center justify-between";
 return (
     <nav>
-        <div className={`${navBackground} ${flexBetween} fixed top-0 z-30 w-full py-8`}>
+        <div className={`${flexBetween} top-0 z-30 w-full py-6`}>
             <div className={`${flexBetween} m-auto w-5/6`}>
-                    <h4 className="font-playfair text-2xl font-bold">Osama Abd <span className={`${isTopOfPage ? "text-blue" : ""} `}>Al Malik</span> </h4>
+                    <h4 className="font-playfair text-2xl font-bold">Osama Abd <span className="text-blue">Al Malik</span> </h4>
                     {/* DESKTOP NAV */}
                     {isAboveMediumScreen ? (
                         <div className={`${flexBetween} gap-10`}>
@@ -39,31 +38,21 @@ return (
                                 page="Home"
                                 selectedPage={selectedPage}
                                 setSelectedPage={setSelectedPage}
-                                isTopOfPage={isTopOfPage}
                                 />
                                 <Link
                                 page="Skills"
                                 selectedPage={selectedPage}
                                 setSelectedPage={setSelectedPage}
-                                isTopOfPage={isTopOfPage}
                                 />
                                 <Link
                                 page="Projects"
                                 selectedPage={selectedPage}
                                 setSelectedPage={setSelectedPage}
-                                isTopOfPage={isTopOfPage}
-                                />
-                                <Link
-                                page="Testimonials"
-                                selectedPage={selectedPage}
-                                setSelectedPage={setSelectedPage}
-                                isTopOfPage={isTopOfPage}
                                 />
                                 <Link
                                 page="Contact"
                                 selectedPage={selectedPage}
                                 setSelectedPage={setSelectedPage}
-                                isTopOfPage={isTopOfPage}
                                 />
                             </div>
                             <SocialMediaIcons/>
@@ -90,31 +79,31 @@ return (
             </div>
             {/* MENU ITEMS */}
             <div className="flex flex-col gap-10 ml-[33%] items-start text-2xl">
-            <Link
-                                page="Home"
-                                selectedPage={selectedPage}
-                                setSelectedPage={setSelectedPage}
-                                />
-                                <Link
-                                page="Skills"
-                                selectedPage={selectedPage}
-                                setSelectedPage={setSelectedPage}
-                                />
-                                <Link
-                                page="Projects"
-                                selectedPage={selectedPage}
-                                setSelectedPage={setSelectedPage}
-                                />
-                                <Link
-                                page="Testimonials"
-                                selectedPage={selectedPage}
-                                setSelectedPage={setSelectedPage}
-                                />
-                                <Link
-                                page="Contact"
-                                selectedPage={selectedPage}
-                                setSelectedPage={setSelectedPage}
-                                />
+                <Link
+                page="Home"
+                selectedPage={selectedPage}
+                setSelectedPage={setSelectedPage}
+                />
+                <Link
+                page="Skills"
+                selectedPage={selectedPage}
+                setSelectedPage={setSelectedPage}
+                />
+                <Link
+                page="Projects"
+                selectedPage={selectedPage}
+                setSelectedPage={setSelectedPage}
+                />
+                <Link
+                page="Testimonials"
+                selectedPage={selectedPage}
+                setSelectedPage={setSelectedPage}
+                />
+                <Link
+                page="Contact"
+                selectedPage={selectedPage}
+                setSelectedPage={setSelectedPage}
+                />
             </div>
         </div>
     )}
