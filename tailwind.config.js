@@ -6,16 +6,15 @@ module.exports = {
     extend: {
       colors: {
         blue: "#008AFF",
-        yellow: "#FDCC49",
-        "dark-grey": "#757575",
+        "blue-50": "#5296CF",
+        "blue-900": "#101318",
+        "blue-100": "rgba(16, 19, 24, 1)",
+        "blue-200": "rgba(16, 19, 24, 0)",
       },
       fontFamily: {
         playfair: ["Playfair Display", "serif"],
         poppins: ["Poppins", "sans-serif"],
         tourney: ["Tourney", "sans-serif"],
-      },
-      content: {
-        fluterdevtext: "url(./assets/FlutterDeveloperText.png)",
       },
     },
     screens: {

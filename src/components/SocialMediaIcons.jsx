@@ -1,25 +1,16 @@
-import Github from '../assets/Github.svg';
-import Facebook from '../assets/mdi_facebook.svg';
+import WhatsApp from '../assets/WhatsApp.svg';
 import Telegram from '../assets/Telegram.svg';
 
 const SocialMediaIcons = () => {
     return (
-    <div className="flex gap-4">
+    <div className="flex gap-4 border-l-2 border-white pl-8 py-2">
         <a
         className="hover:opacity-50 transition duration-500"
-        href="https://www.github.com"
+        href="https://www.whatsapp.com"
         target="_blank"
         rel="noreferrer"
         >
-        <img alt="Github-link" src={Github} />
-        </a>
-        <a
-        className="hover:opacity-50 transition duration-500"
-        href="https://www.facebook.com"
-        target="_blank"
-        rel="noreferrer"
-        >
-        <img alt="facebook-link" src={Facebook} />
+        <img alt="WhatsApp-link" src={WhatsApp} className='w-[24px] h-[24px]'/>
         </a>
         <a
         className="hover:opacity-50 transition duration-500"
@@ -27,7 +18,7 @@ const SocialMediaIcons = () => {
         target="_blank"
         rel="noreferrer"
         >
-        <img alt="telegram-link" src={Telegram} />
+        <img alt="telegram-link" src={Telegram} className='w-[24px] h-[24px]'/>
         </a>
     </div>
     );

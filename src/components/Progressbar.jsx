@@ -15,6 +15,7 @@ export const ProgressBar = ({skill, completed }) => {
                     <motion.div
                     className={fillerStyles}
                     animate={{ width: `${completed}%` }}
+                    transition={{ duration: 0.5}}
                     initial={{ width: "0%" }}
                     >
                     <span className={labelParcent}>{`${completed}%`}</span>

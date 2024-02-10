@@ -7,12 +7,13 @@ import SocialMediaIcons from "../components/SocialMediaIcons";
 
 const Link = ({ page, selectedPage, setSelectedPage }) => {
     const navBorder = " border-b-2 border-blue" ;
-    const lowerCasePage = page.toLowerCase();
+    const lowerCasePage = page.toLowerCase().replace(/ /g,"");
+
     return (
         <AnchorLink
             className={`${
             selectedPage === lowerCasePage ? navBorder : ""
-            } hover:opacity-50 transition duration-500 font-light font-poppins`}
+            } hover:text-blue-50 transition duration-500 font-light font-poppins`}
             href={`#${lowerCasePage}`}
             onClick={() => setSelectedPage(lowerCasePage)}
         >

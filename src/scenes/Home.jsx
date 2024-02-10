@@ -1,8 +1,9 @@
 import { motion } from "framer-motion";
-// import flutter from '../assets/FlutterDeveloperText.png'
-import HomePageGraphic from "../assets/undraw_product_iteration_kjok 2.svg";
 import useMediaQuery from "../hooks/useMediaQuery";
 import AnchorLink from 'react-anchor-link-smooth-scroll'
+import { SelectedPage } from "../shared/data";
+import HomePageGraphic from '../assets/HomePageGraphic.svg'
+
 const Home = ({setSelctedPage}) => {
   const isDesktop = useMediaQuery("(min-width: 1400px)");
 
@@ -10,11 +11,11 @@ const Home = ({setSelctedPage}) => {
   return (
     <section
     id='home'
-    className='gap-16 py-10 md:h-full md:py-32'
+    className='gap-16 py-10 md:h-full md:pb-0'
     >
       {/* IMAGE AND MAIN HEADER */}
       <motion.div
-      onViewportEnter={() => setSelctedPage("home")}
+      onViewportEnter={() => setSelctedPage(SelectedPage.Home)}
       className="relative gap-10 mx-auto md:mt-28 w-5/6 md:flex md:items-center md:justify-between">
       {
         (isDesktop && (
@@ -45,18 +46,18 @@ const Home = ({setSelctedPage}) => {
             <h1 className="font-playfair text-[40px] lg:text-[50px]">
             Hello, I’m <br/> <span className="text-blue">Flutter</span> Developer
           </h1>
-          {/* <img src={flutter} alt="flutter" className="z-[-1] md:z-0 absolute -right-[50%]"/> */}
           </div>
           <p className="text-base font-poppins max-w-[600px]">
             Passionate Flutter developer with expertise in crafting seamless mobile experiences. Proficient in Flutter and UI/UX design. Ready for any project
           </p>
           <AnchorLink
           className="mt-8">
-            <button 
+            <motion.button
+            whileHover={{scale: 1.2, duration:0.5, boxShadow: "0px 0px 8px", color:"#eeeeee"}}
             onClick={() => setSelctedPage("contactus")}
             className="px-6 py-2 font-semibold text text-blue border-2 border-blue hover:shadow-md hover:shadow-blue transition duration-500">
               Lit’s Discuss
-            </button>
+            </motion.button>
           </AnchorLink>
         </motion.div>
         {/* IMAGE */}
@@ -73,47 +74,7 @@ const Home = ({setSelctedPage}) => {
         alt="hero image" 
         className="relative w-[500px] h-[500px]"/>
       </motion.div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      
-    {/* MAIN HEADER */}
-    {/* <div className='md:flex m-auto w-5/6 md:h-5/6'>
-    <div className="z-10 mt-[10rem] flex items-start justify-start w-[50%]">
-      <motion.div
-      initial= "hidden"
-      whileInView="visable"
-      viewport={{ once: true, amount: 0.5 }}
-      transition={{duration: 0.5}}
-      variants={{
-        hidden: {opacity: 0.1, y: 50},
-        visable: {opacity:1, y: 0}
-      }}
-      >
-        <h1 className="font-playfair text-[70px]">
-              Hello, I’m <br/> <span className="text-blue">Flutter</span> Developer
-            </h1>
-            <p className="mt-8">
-            Passionate Flutter developer with expertise in crafting seamless mobile experiences. Proficient in Flutter and UI/UX design. Ready for any project
-            </p>
-      </motion.div>
-    </div>
-    </div> */}
     </section>
-
-
-
   )
 }
 

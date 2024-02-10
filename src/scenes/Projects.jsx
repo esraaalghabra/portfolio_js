@@ -1,36 +1,36 @@
 import HText from "../components/HText";
-import Skills from "./Skills";
 import {motion} from 'framer-motion';
 import cover1 from '../assets/cover 1.png'
 import cover2 from '../assets/cover 2.png'
 import cover3 from '../assets/cover 3.png'
 import AnchorLink from 'react-anchor-link-smooth-scroll';
+import { SelectedPage } from "../shared/data";
 
 export const ItemProject = ({image}) => {
-    const overlayStyles = `p-5 absolute z-30 flex
-    h-[380px] w-[450px] flex-col items-center justify-center`;
     return(
-        <li className="relative mx-5 inline-block h-[380px] w-[450px] hover:scale-125 rounded-full">
+        <div className="rounded-lg p-5 flex justify-center items-center">
             <AnchorLink
-            className="transition duration-500 hover:text-primary-300"
+            className="transition duration-500 hover:scale-125"
             href="#">
-            <img src={image} alt={image} />
+            <img src={image} alt={image} className="w-[400px] md:h-[284px]"/>
             </AnchorLink>
-        </li>
+        </div>
     )
 }
 
-const Projects = () => {
+const Projects = ({setSelectedPage}) => {
     const myProjects = [
             cover1,cover2,cover3,
             cover1,cover2,cover3
     ]
-  return (
+return (
     <section
     id="projects"
-    className="py-10 md:h-full md:py-32"
+    className="py-20 md:h-full md:py-32"
     >
-        <div className="flex flex-col items-center justify-center">
+        <motion.div
+        onViewportEnter={() => setSelectedPage(SelectedPage.Projects)}
+        className="flex flex-col items-center justify-center">
             <motion.dev
             initial="hidden"
             whileInView="visible"
@@ -44,19 +44,17 @@ const Projects = () => {
             >
                 <HText text={"Projects"}/>
             </motion.dev>
-            <div 
-            className='mt-32 h-[400px] w-full overflow-x-auto overflow-y-hidden'>
-                <ul className='w-[2800px] whitespace-nowrap'>
-                    {myProjects.map((item, index) => (
-                        <ItemProject
-                        image={item}
-                        />
-                    ))}
-                </ul>
+            <div className="container mx-auto pt-32 grid grid-flow-row lg:grid-cols-3 gap-10 w-full grid-cols-1 md:grid-cols-2">
+            {myProjects.map((item, index) => (
+            <ItemProject
+            image={item}
+            />
+        ))}
             </div>
-        </div>
+        </motion.div>
     </section>
-  )
+)
 }
 
 export default Projects
+
