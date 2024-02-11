@@ -88,7 +88,7 @@ return (
 
 {/* MOBILE MENU POPUP */}
     {!isAboveMediumScreen && isMenueToggled && (
-        <div className="fixed right-0 bottom-0 z-40 h-full w-[300px] bg-dark-grey drop-shadow-xl">
+        <div className="fixed right-0 bottom-0 z-40 h-full w-[300px] bg-yellow-300 drop-shadow-xl">
             {/* CLOSE ICON */}
             <div className="flex justify-end p-12">
             <button onClick={() => setIsMenueToggled(!isMenueToggled)}>
