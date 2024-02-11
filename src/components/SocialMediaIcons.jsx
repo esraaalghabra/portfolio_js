@@ -1,24 +1,42 @@
-import WhatsApp from '../assets/WhatsApp.svg';
-import Telegram from '../assets/Telegram.svg';
+import Facebook from '../assets/fac.svg';
+import Instagram from '../assets/insta.svg';
+import LinkedIn from '../assets/in.svg';
+import Behince from '../assets/Be.svg';
 
 const SocialMediaIcons = () => {
     return (
-    <div className="flex gap-4 border-l-2 border-white pl-8 py-2">
+    <div className="flex gap-4">
         <a
         className="hover:opacity-50 transition duration-500"
-        href="https://www.whatsapp.com"
+        href="https://www.facebook.com"
         target="_blank"
         rel="noreferrer"
         >
-        <img alt="WhatsApp-link" src={WhatsApp} className='w-[24px] h-[24px]'/>
+        <img alt="facebook-link" src={Facebook} className='w-[24px] h-[24px]'/>
         </a>
         <a
         className="hover:opacity-50 transition duration-500"
-        href="https://www.telegram.com"
+        href="https://www.Linkedin.com"
         target="_blank"
         rel="noreferrer"
         >
-        <img alt="telegram-link" src={Telegram} className='w-[24px] h-[24px]'/>
+        <img alt="LinkedIn-link" src={LinkedIn} className='w-[24px] h-[24px]'/>
+        </a>
+        <a
+        className="hover:opacity-50 transition duration-500"
+        href="https://www.behince.com"
+        target="_blank"
+        rel="noreferrer"
+        >
+        <img alt="Behince-link" src={Behince} className='w-[24px] h-[24px]'/>
+        </a>
+        <a
+        className="hover:opacity-50 transition duration-500"
+        href="https://www.instgram.com"
+        target="_blank"
+        rel="noreferrer"
+        >
+        <img alt="instgram-link" src={Instagram} className='w-[24px] h-[24px]'/>
         </a>
     </div>
     );

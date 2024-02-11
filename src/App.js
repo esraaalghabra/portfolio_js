@@ -5,6 +5,7 @@ import Skills from "./scenes/Skills";
 import Projects from "./scenes/Projects";
 import { SelectedPage } from "./shared/data";
 import Contact from "./scenes/Contact";
+import Footer from "./scenes/Footer";
 function App() {
   const [selectedPage, setSelectedPage] = useState("home");
   useEffect(() => {
@@ -29,6 +30,7 @@ function App() {
       <Skills setSelectedPage={setSelectedPage}/>
       <Projects setSelectedPage={setSelectedPage}/>
       <Contact setSelctedPage={setSelectedPage}/>
+      <Footer/>
     </div>
   );
 }
