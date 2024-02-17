@@ -44,7 +44,7 @@ return (
                 <HText text={"Contact Me"}/>
             </motion.dev>
             <div className='justify-between gap-8 pt-24 w-5/6 mx-auto md:flex'>
-                <div className='flex flex-col basis-3/5'>
+                <div className='flex flex-col basis-[40%]'>
                 <form
                     target="_blank"
                     onSubmit={onSubmit}
@@ -109,7 +109,7 @@ return (
                 </button>
                 </form>
                 </div>
-                <div className="px-20 basis-2/5 gap-16">
+                <div className="pr-20 basis-[40%] gap-16">
                 <div className="mt-8 md:mt-0">
                 <h4 className="font-semibold">Phone</h4>
                 <p className="mt-4">

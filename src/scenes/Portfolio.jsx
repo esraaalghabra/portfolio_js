@@ -5,16 +5,16 @@ import 'swiper/css/scrollbar';
 import HText from "../components/HText";
 
 import {motion} from 'framer-motion';
-
+import Behance from '../assets/Behance.svg'
 import { Navigation, Pagination,  A11y } from 'swiper/modules';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
-import {RxArrowTopRight} from 'react-icons/rx'
 
 import { SelectedPage, ServiceData } from "../shared/data";
 
+
 const Portfolio = ({setSelectedPage}) => {
-  return (
+return (
     <section
     id="projects"
     className="py-20 md:h-full md:py-32"
@@ -40,47 +40,53 @@ const Portfolio = ({setSelectedPage}) => {
             breakpoints={{
                 500:{
                 slidesPerView:1,
-                spaceBetween:15
                 },
-                768:{
+                1060:{
                 slidesPerView:2,
                 spaceBetween:10
                 },
-                1060:{
+                1200:{
                 slidesPerView: 3,
-                spaceBetween: 15
+                spaceBetween: 10
                 }
             }}
             modules={[Navigation, Pagination, A11y]}
-
             navigation
             pagination={{ clickable: true }}
             onSwiper={(swiper) => console.log(swiper)}
             onSlideChange={() => console.log('slide change')}
-            className="w-full"
+            className="w-[80%] relative"
             >
                 {ServiceData.map((item) => (
-                <SwiperSlide key={item.title}>
-                    <div className="flex flex-col  gap-6 my-20 mx-auto  group relative shadow-lg rounded-xl px-6 py-8 w-[300px] h-[284px] md:h-[284px] md:w-[310px] overflow-hidden cursor-pointer">
-                    <div
-                    className={`absolute inset-0 w-full h-full bg-cover bg-center`}
+                <SwiperSlide>
+                <div className="flex flex-col  gap-6 group relative items-center justify-center
+                my-20 mx-auto shadow-lg rounded-xl px-6 py-8
+                w-[400px] h-[300px]
+                md:w-[370px] md:h-[250px] 
+                lg:w-[300px] lg:h-[200px] 
+                xl:w-[350px] xl:h-[250px] 
+                overflow-hidden cursor-pointer">
+                <div
+                className={`absolute inset-0 w-full h-full bg-cover bg-center`}
+                >
+                    <img src={item.bImage} alt={item.bImage} className="w-full h-full"/>
+                </div>
+                <div className="absolute inset-0 bg-black opacity-10 group-hover:opacity-50"/>
+                <a
+                    className="absolute bottom-5 left-5 w-[35px] h-[35px] opacity-0 group-hover:opacity-100 duration-100"
+                    href={item.url}
+                    target="_blank"
+                    rel="noreferrer"
                     >
-                        <img src={item.bImage} alt="" className="w-full h-full"/>
-                    </div>
-                    <div className="absolute inset-0 bg-black opacity-10 group-hover:opacity-50"/>
-                    <div className="relative flex flex-col gap-3">
-                        <item.icon className="opacity-0 text-blue-50 group-hover:opacity-100 w-[32px] h-[32px]"/>
-                        <h1 className="opacity-0 group-hover:opacity-100 text-xl lg:text-2xl">{item.title}</h1>
-                        <p className="opacity-0 group-hover:opacity-100 lg:text-[18px]">{item.content}</p>
-                    </div>
-                    <RxArrowTopRight className="absolute bottom-5 left-5 w-[35px] h-[35px] text-white group-hover:text-blue-50 group-hover:rotate-45 duration-100"/>
-                    </div>
+                    <img alt="Behance-link" src={Behance} className='w-[50px] h-[50px]'/>
+                </a>
+                </div>
                 </SwiperSlide>
                 ))}
             </Swiper>
             </motion.div>
     </section>
-  )
+    )
 }
 
 export default Portfolio
