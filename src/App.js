@@ -1,12 +1,18 @@
 import { useEffect, useState } from "react";
+import { SelectedPage } from "./shared/data";
+
+
 import Navbar from "./scenes/Navbar";
 import Home from "./scenes/Home";
 import Skills from "./scenes/Skills";
-import Projects from "./scenes/Projects";
-import { SelectedPage } from "./shared/data";
 import Contact from "./scenes/Contact";
 import Footer from "./scenes/Footer";
+import Portfolio from "./scenes/Portfolio";
+
+
+
 function App() {
+
   const [selectedPage, setSelectedPage] = useState("home");
   useEffect(() => {
     const handleScroll = () => {
@@ -20,15 +26,17 @@ function App() {
     return () => window.removeEventListener("scroll", handleScroll)
   },[])
 
+
   return (
-    <div className="bg-deep-blue">
+    <div className=" bg-deep-blue">
       <Navbar
         selectedPage={selectedPage}
         setSelectedPage={setSelectedPage}
       />
       <Home setSelctedPage={setSelectedPage}/>
       <Skills setSelectedPage={setSelectedPage}/>
-      <Projects setSelectedPage={setSelectedPage}/>
+      {/* <Projects setSelectedPage={setSelectedPage}/> */}
+      <Portfolio setSelectedPage={setSelectedPage}/>
       <Contact setSelctedPage={setSelectedPage}/>
       <Footer/>
     </div>

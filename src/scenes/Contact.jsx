@@ -5,9 +5,10 @@ import HText from '../components/HText';
 import { useForm } from 'react-hook-form';
 import SocialMediaIcons from '../components/SocialMediaIcons';
 
+
 const Contact = ({setSelctedPage}) => {
 
-    const inputStyles = `mb-5 w-full bg-black
+    const inputStyles = `my-3 w-full bg-black
     px-5 py-3 placeholder-white border-b-2 border-blue font-poppins`;
         const {
             register,
@@ -42,8 +43,8 @@ return (
             >
                 <HText text={"Contact Me"}/>
             </motion.dev>
-            <div className='justify-between gap-48 pt-24 w-5/6 mx-auto md:flex'>
-                <div className='flex flex-col gap-10'>
+            <div className='justify-between gap-8 pt-24 w-5/6 mx-auto md:flex'>
+                <div className='flex flex-col basis-3/5'>
                 <form
                     target="_blank"
                     onSubmit={onSubmit}
@@ -60,7 +61,7 @@ return (
                     })}
                 />
                 {errors.name && (
-                    <p className="mt-1 text-primary-500">
+                    <p className="text-error text-sm">
                     {errors.name.type === "required" && "This field is required."}
                     {errors.name.type === "maxLength" &&
                         "Max length is 100 char."}
@@ -76,13 +77,13 @@ return (
                     })}
                 />
                 {errors.email && (
-                    <p className="mt-1 text-primary-500">
+                    <p className=" text-error text-sm">
                     {errors.email.type === "required" &&
                         "This field is required."}
                     {errors.email.type === "pattern" && "Invalid email address."}
                     </p>
                 )}
-    <textarea
+                <textarea
                     className={inputStyles}
                     placeholder="MESSAGE"
                     rows={4}
@@ -93,7 +94,7 @@ return (
                     })}
                 />
                 {errors.message && (
-                    <p className="mt-1 text-primary-500">
+                    <p className="text-error text-sm">
                     {errors.message.type === "required" &&
                         "This field is required."}
                     {errors.message.type === "maxLength" &&
@@ -102,13 +103,13 @@ return (
                 )}
                     <button
                     type="submit"
-                    className="px-6 py-2 font-semibold text text-blue border-2 border-blue hover:shadow-md hover:shadow-blue transition duration-500"
+                    className="mt-5 px-6 py-2 font-semibold text text-blue border-2 border-blue hover:shadow-md hover:shadow-blue transition duration-500"
                 >
                     SUBMIT
                 </button>
                 </form>
                 </div>
-                <div className=" w-3/5 gap-16">
+                <div className="px-20 basis-2/5 gap-16">
                 <div className="mt-8 md:mt-0">
                 <h4 className="font-semibold">Phone</h4>
                 <p className="mt-4">

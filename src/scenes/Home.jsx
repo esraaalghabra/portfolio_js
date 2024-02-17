@@ -1,13 +1,32 @@
 import { motion } from "framer-motion";
 import useMediaQuery from "../hooks/useMediaQuery";
-import AnchorLink from 'react-anchor-link-smooth-scroll'
 import { SelectedPage } from "../shared/data";
 import HomePageGraphic from '../assets/HomePageGraphic.svg'
+import ActionButton from "../components/ActionButton";
+
+const backgroundTextVariants = {
+  hidden:{
+    opacity: 0, x: 50
+  },
+  visible:{
+    opacity: 0.03, x: 0,
+    transition:{delay: 0.2, duration: 0.5 },
+    viewport:{ once: true, amount: 0.5 }
+  },
+}
+const containerVariants = {
+  hidden:{
+    opacity: 0, x: -50
+  },
+  visible:{
+    opacity: 1, x: 0,
+    transition:{delay: 0.2, duration: 0.5 },
+    viewport:{ once: true, amount: 0.5 }
+  },
+}
 
 const Home = ({setSelctedPage}) => {
   const isDesktop = useMediaQuery("(min-width: 1400px)");
-
-
   return (
     <section
     id='home'
@@ -22,12 +41,7 @@ const Home = ({setSelctedPage}) => {
           <motion.h4
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.5 }}
-          transition={{delay: 0.2, duration: 0.3 }}
-          variants={{
-          hidden: { opacity: 0, x: 50 },
-          visible: { opacity: 0.03, x: 0 },
-          }}
+          variants= {backgroundTextVariants}
           className="font-tourney text-[80px] xl:text-[100px] z-0 absolute xl:left-[44rem] lg:left-[32rem] opacity-[0.1] leading-relaxed tracking-wider max-w-[1100px] "><span className="text-blue">SOFTWARE</span><br/>ENGINEER</motion.h4>
         ))
       }
@@ -35,12 +49,7 @@ const Home = ({setSelctedPage}) => {
         <motion.div
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.5 }}
-          transition={{ duration: 0.5 }}
-          variants={{
-          hidden: { opacity: 0, x: -50 },
-          visible: { opacity: 1, x: 0 },
-          }}
+          variants={containerVariants}
         className="relative flex flex-col items-start p-5 md:mr-10 gap-6">
           <div className="flex">
             <h1 className="font-playfair text-[40px] lg:text-[50px]">
@@ -50,15 +59,7 @@ const Home = ({setSelctedPage}) => {
           <p className="text-base font-poppins max-w-[600px]">
             Passionate Flutter developer with expertise in crafting seamless mobile experiences. Proficient in Flutter and UI/UX design. Ready for any project
           </p>
-          <AnchorLink
-          className="mt-8">
-            <motion.button
-            whileHover={{scale: 1.2, duration:0.5, boxShadow: "0px 0px 8px", color:"#eeeeee"}}
-            onClick={() => setSelctedPage("contactus")}
-            className="px-6 py-2 font-semibold text text-blue border-2 border-blue hover:shadow-md hover:shadow-blue transition duration-500">
-              Lit’s Discuss
-            </motion.button>
-          </AnchorLink>
+          <ActionButton page={SelectedPage.Contact} setSelctedPage={setSelctedPage}/>
         </motion.div>
         {/* IMAGE */}
         <motion.img

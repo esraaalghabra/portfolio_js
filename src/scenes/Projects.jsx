@@ -8,11 +8,11 @@ import { SelectedPage } from "../shared/data";
 
 export const ItemProject = ({image}) => {
     return(
-        <div className="rounded-lg p-5 flex justify-center items-center">
+        <div className="rounded-lg p-5 flex justify-center items-center min-h-[25rem] min-w-[20rem]">
             <AnchorLink
-            className="transition duration-500 hover:scale-125"
+            className="transition duration-500 hover:scale-105"
             href="#">
-            <img src={image} alt={image} className="w-[400px] md:h-[284px]"/>
+            <img src={image} alt={image} className="w-[100%] h-[100%]"/>
             </AnchorLink>
         </div>
     )
@@ -21,7 +21,8 @@ export const ItemProject = ({image}) => {
 const Projects = ({setSelectedPage}) => {
     const myProjects = [
             cover1,cover2,cover3,
-            cover1,cover2,cover3
+            cover1,cover2,cover3,
+            cover1,cover2,cover3,
     ]
 return (
     <section
@@ -49,7 +50,7 @@ return (
             <ItemProject
             image={item}
             />
-        ))}
+            ))}
             </div>
         </motion.div>
     </section>
