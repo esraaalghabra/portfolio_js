@@ -2,9 +2,7 @@ import { useState } from "react"
 import useMediaQuery from "../hooks/useMediaQuery";
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 import {Bars3Icon, XMarkIcon} from "@heroicons/react/24/solid";
-import WhatsApp from '../assets/WhatsApp.svg';
-import Telegram from '../assets/Telegram.svg';
-import Footer from "./Footer";
+import SocialMenue from "../components/SocialMenue";
 
 const Link = ({ page, selectedPage, setSelectedPage }) => {
     const navBorder = " border-b-2 border-blue" ;
@@ -27,9 +25,9 @@ const Navbar = ({ selectedPage, isTopOfPage, setSelectedPage}) => {
     const [isMenueToggled, setIsMenueToggled] = useState(false);
     const isAboveMediumScreen = useMediaQuery("(min-width: 1060px)");
     const flexBetween = "flex items-center justify-between";
-    const navBackground = isTopOfPage ? "" : "bg-slate-800 opacity-90 drop-shadow";
+    const navBackground = isTopOfPage ? "" : "bg-slate-800 opacity-900 drop-shadow";
 return (
-    <nav>
+    <nav className="relative">
         <div className={`${navBackground} ${flexBetween} fixed top-0 z-30 w-full py-6`}>
             <div className={`${flexBetween} m-auto w-5/6`}>
                     <h4 className="font-playfair text-2xl font-bold">Osama Abd <span className="text-blue">Al Malik</span> </h4>
@@ -58,47 +56,33 @@ return (
                                 setSelectedPage={setSelectedPage}
                                 />
                             </div>
-                            <div className="flex gap-4 border-l-2 border-white pl-8 py-2">
-                                <a
-                                className="hover:opacity-50 transition duration-500"
-                                href="https://www.whatsapp.com"
-                                target="_blank"
-                                rel="noreferrer"
-                                >
-                                <img alt="WhatsApp-link" src={WhatsApp} className='w-[24px] h-[24px]'/>
-                                </a>
-                                <a
-                                className="hover:opacity-50 transition duration-500"
-                                href="https://www.telegram.com"
-                                target="_blank"
-                                rel="noreferrer"
-                                >
-                                <img alt="telegram-link" src={Telegram} className='w-[24px] h-[24px]'/>
-                                </a>
-                            </div>
+                            <SocialMenue border={true}/>
                         </div>
                     ) : (
                         <button
-                        className="rounded-full bg-blue p-2"
+                        className=""
                         onClick={() => setIsMenueToggled(!isMenueToggled)}
                         >
-                            <Bars3Icon className="h-6 w-6 text-white"/>
+                            {
+                                isMenueToggled ? (<XMarkIcon  className="h-6 w-6 text-white"/>) 
+                                :(<Bars3Icon className="h-6 w-6"/>)
+                            }
                         </button>                   
                         ) }
             </div>
         </div>
 
 {/* MOBILE MENU POPUP */}
-    {!isAboveMediumScreen && isMenueToggled && (
-        <div className="fixed right-3 left-3 bg-white text-blue-900 border-2 border-blue-900 rounded-lg z-40  w-[500px] mt-20  drop-shadow-xl">
+    {!isAboveMediumScreen && (
+        <div className={`space-y-4 px-4 mt-16 z-[60] py-7 bg-slate-800 ${isMenueToggled ? "block fixed top-0 right-0 left-0":"hidden"}`}>
             {/* CLOSE ICON */}
-            <div className="flex justify-end p-12">
+            {/* <div className="flex justify-end p-12">
             <button onClick={() => setIsMenueToggled(!isMenueToggled)}>
                 <XMarkIcon className="h-6 w-6"/>
             </button>
-            </div>
+            </div> */}
             {/* MENU ITEMS */}
-            <div className="flex flex-col gap-10 items-center justify-center text-2xl">
+            <div className="flex flex-col gap-10 items-center text-2xl">
                 <Link
                 page="Home"
                 selectedPage={selectedPage}
@@ -119,7 +103,9 @@ return (
                 selectedPage={selectedPage}
                 setSelectedPage={setSelectedPage}
                 />
-                <Footer/>
+                <div className='mt-10 py-4 border-t-2 border-white flex flex-col items-center gap-6 justify-center text-sm'>
+                <SocialMenue border={false}/>
+                    © 2024 osama abd al malik. All right reserved</div>
             </div>
         </div>
     )}

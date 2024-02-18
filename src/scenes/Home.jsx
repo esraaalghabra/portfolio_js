@@ -35,7 +35,7 @@ const Home = ({setSelctedPage}) => {
       {/* IMAGE AND MAIN HEADER */}
       <motion.div
       onViewportEnter={() => setSelctedPage(SelectedPage.Home)}
-      className="relative gap-10 mx-auto md:mt-28 w-5/6 md:flex md:items-center md:justify-between">
+      className="relative gap-10 mx-auto mt-28 w-5/6 md:flex md:items-center md:justify-between">
       {
         (isDesktop && (
           <motion.h4
