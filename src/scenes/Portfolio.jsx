@@ -38,8 +38,9 @@ return (
             
             <Swiper 
             breakpoints={{
-                500:{
+                324:{
                 slidesPerView:1,
+                spaceBetween:10
                 },
                 768:{
                 slidesPerView:2,
@@ -65,7 +66,8 @@ return (
                 <SwiperSlide>
                 <div className="flex flex-col  gap-6 group relative items-center justify-center
                 my-20 mx-auto shadow-lg rounded-xl px-6 py-8
-                w-[350px] h-[300px]
+                w-[250px] h-[200px]
+                ss:w-[300px] ss:h-[250px]
                 md:w-[370px] md:h-[250px] 
                 lg:w-[300px] lg:h-[200px] 
                 xl:w-[350px] xl:h-[250px] 
