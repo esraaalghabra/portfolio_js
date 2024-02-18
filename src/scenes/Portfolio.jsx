@@ -41,6 +41,10 @@ return (
                 500:{
                 slidesPerView:1,
                 },
+                768:{
+                slidesPerView:2,
+                spaceBetween:10
+                },
                 1060:{
                 slidesPerView:2,
                 spaceBetween:10
@@ -61,7 +65,7 @@ return (
                 <SwiperSlide>
                 <div className="flex flex-col  gap-6 group relative items-center justify-center
                 my-20 mx-auto shadow-lg rounded-xl px-6 py-8
-                w-[400px] h-[300px]
+                w-[350px] h-[300px]
                 md:w-[370px] md:h-[250px] 
                 lg:w-[300px] lg:h-[200px] 
                 xl:w-[350px] xl:h-[250px] 
@@ -71,14 +75,14 @@ return (
                 >
                     <img src={item.bImage} alt={item.bImage} className="w-full h-full"/>
                 </div>
-                <div className="absolute inset-0 bg-black opacity-10 group-hover:opacity-50"/>
+                <div className="absolute inset-0 bg-black opacity-50 group-hover:opacity-10"/>
                 <a
                     className="absolute bottom-5 left-5 w-[35px] h-[35px] opacity-0 group-hover:opacity-100 duration-100"
                     href={item.url}
                     target="_blank"
                     rel="noreferrer"
                     >
-                    <img alt="Behance-link" src={Behance} className='w-[50px] h-[50px]'/>
+                    <img alt="Behance-link" src={Behance} className='w-[50px] h-[50px] opacity-50 hover:opacity-100'/>
                 </a>
                 </div>
                 </SwiperSlide>

@@ -4,6 +4,7 @@ import AnchorLink from 'react-anchor-link-smooth-scroll';
 import {Bars3Icon, XMarkIcon} from "@heroicons/react/24/solid";
 import WhatsApp from '../assets/WhatsApp.svg';
 import Telegram from '../assets/Telegram.svg';
+import Footer from "./Footer";
 
 const Link = ({ page, selectedPage, setSelectedPage }) => {
     const navBorder = " border-b-2 border-blue" ;
@@ -22,13 +23,14 @@ const Link = ({ page, selectedPage, setSelectedPage }) => {
         );
     };
 
-const Navbar = ({ selectedPage, setSelectedPage}) => {
+const Navbar = ({ selectedPage, isTopOfPage, setSelectedPage}) => {
     const [isMenueToggled, setIsMenueToggled] = useState(false);
     const isAboveMediumScreen = useMediaQuery("(min-width: 1060px)");
     const flexBetween = "flex items-center justify-between";
+    const navBackground = isTopOfPage ? "" : "bg-slate-800 opacity-90 drop-shadow";
 return (
     <nav>
-        <div className={`${flexBetween} top-0 z-30 w-full py-6`}>
+        <div className={`${navBackground} ${flexBetween} fixed top-0 z-30 w-full py-6`}>
             <div className={`${flexBetween} m-auto w-5/6`}>
                     <h4 className="font-playfair text-2xl font-bold">Osama Abd <span className="text-blue">Al Malik</span> </h4>
                     {/* DESKTOP NAV */}
@@ -88,7 +90,7 @@ return (
 
 {/* MOBILE MENU POPUP */}
     {!isAboveMediumScreen && isMenueToggled && (
-        <div className="fixed right-0 bottom-0 z-40 h-full w-[300px] bg-yellow-300 drop-shadow-xl">
+        <div className="fixed right-3 left-3 bg-white text-blue-900 border-2 border-blue-900 rounded-lg z-40  w-[500px] mt-20  drop-shadow-xl">
             {/* CLOSE ICON */}
             <div className="flex justify-end p-12">
             <button onClick={() => setIsMenueToggled(!isMenueToggled)}>
@@ -96,7 +98,7 @@ return (
             </button>
             </div>
             {/* MENU ITEMS */}
-            <div className="flex flex-col gap-10 ml-[33%] items-start text-2xl">
+            <div className="flex flex-col gap-10 items-center justify-center text-2xl">
                 <Link
                 page="Home"
                 selectedPage={selectedPage}
@@ -113,15 +115,11 @@ return (
                 setSelectedPage={setSelectedPage}
                 />
                 <Link
-                page="Testimonials"
-                selectedPage={selectedPage}
-                setSelectedPage={setSelectedPage}
-                />
-                <Link
                 page="Contact"
                 selectedPage={selectedPage}
                 setSelectedPage={setSelectedPage}
                 />
+                <Footer/>
             </div>
         </div>
     )}

@@ -14,12 +14,15 @@ import Portfolio from "./scenes/Portfolio";
 function App() {
 
   const [selectedPage, setSelectedPage] = useState("home");
+  const [isTopOfPage, setIsTopOfPage] = useState(true);
   useEffect(() => {
     const handleScroll = () => {
       if(window.scrollY === 0) {
+        setIsTopOfPage(true);
         setSelectedPage(SelectedPage.Home);
       }
       if(window.scrollY !== 0){
+        setIsTopOfPage(false)
       }
     }
     window.addEventListener("scroll", handleScroll);
@@ -30,6 +33,7 @@ function App() {
   return (
     <div className=" bg-deep-blue">
       <Navbar
+        isTopOfPage = {isTopOfPage}
         selectedPage={selectedPage}
         setSelectedPage={setSelectedPage}
       />
