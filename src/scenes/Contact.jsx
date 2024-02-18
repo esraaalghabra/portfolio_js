@@ -9,7 +9,7 @@ import SocialMediaIcons from '../components/SocialMediaIcons';
 const Contact = ({setSelctedPage}) => {
 
     const inputStyles = `my-3 w-full bg-black
-    px-5 py-3 placeholder-white border-b-2 border-blue font-poppins`;
+    px-5 py-3 placeholder-white border-b-2 border-blue bg-slate-800 font-poppins`;
         const {
             register,
             trigger,
@@ -54,7 +54,7 @@ return (
                     <input
                     className={inputStyles}
                     type="text"
-                    placeholder="NAME"
+                    placeholder="Full name"
                     {...register("name", {
                     required: true,
                     maxLength: 100,
@@ -70,7 +70,7 @@ return (
                     <input
                     className={inputStyles}
                     type="text"
-                    placeholder="EMAIL"
+                    placeholder="Email Address"
                     {...register("email", {
                     required: true,
                     pattern: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
@@ -85,7 +85,7 @@ return (
                 )}
                 <textarea
                     className={inputStyles}
-                    placeholder="MESSAGE"
+                    placeholder="Message"
                     rows={4}
                     cols={50}
                     {...register("message", {

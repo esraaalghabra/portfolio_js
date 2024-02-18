@@ -39,7 +39,6 @@ function App() {
       />
       <Home setSelctedPage={setSelectedPage}/>
       <Skills setSelectedPage={setSelectedPage}/>
-      {/* <Projects setSelectedPage={setSelectedPage}/> */}
       <Portfolio setSelectedPage={setSelectedPage}/>
       <Contact setSelctedPage={setSelectedPage}/>
       <Footer/>
