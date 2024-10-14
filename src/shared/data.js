@@ -31,3 +31,5 @@ export const ServiceData = [
         bImage: cover1,
         },
 ];
+
+

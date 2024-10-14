@@ -42,7 +42,7 @@ const Home = ({setSelctedPage}) => {
           initial="hidden"
           whileInView="visible"
           variants= {backgroundTextVariants}
-          className="font-tourney text-[80px] xl:text-[100px] z-0 absolute xl:left-[44rem] lg:left-[32rem] opacity-[0.1] leading-relaxed tracking-wider max-w-[1100px] "><span className="text-blue">SOFTWARE</span><br/>ENGINEER</motion.h4>
+          className="font-tourney gradienttext-[80px] xl:text-[100px] z-0 absolute xl:left-[44rem] lg:left-[32rem] opacity-[0.1] leading-relaxed tracking-wider max-w-[1100px] "><span className="text-blue">SOFTWARE</span><br/>ENGINEER</motion.h4>
         ))
       }
       {/* MAIN HEADER */}
